@@ -1,0 +1,18 @@
+@page "/health"
+@attribute [Authorize(Policy = "AdminOnly")]
+@inject IConfiguration Configuration
+
+<PageTitle>System Health</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">System Health</MudText>
+
+<Admin.Blazor.Components.Shared.ExternalDashboardCard
+	Title="HealthChecks UI"
+	Url="@HealthUiUrl"
+	Description="Aggregated health status for every microservice (Product, Customer, Basket, Ordering, Inventory, HangFire)."
+	Icon="@Icons.Material.Filled.MonitorHeart"
+	IconColor="Color.Success"
+	Note="The dashboard opens in a new tab; it cannot be safely embedded in an iframe." />
+
+@code {
+	private string HealthUiUrl => Configuration["ExternalUis:HealthChecksUi"] ?? "http://localhost:5008/healthchecks-ui";
+}

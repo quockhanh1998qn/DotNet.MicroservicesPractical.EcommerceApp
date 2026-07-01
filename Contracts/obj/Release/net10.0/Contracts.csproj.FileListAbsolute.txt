@@ -1,0 +1,14 @@
+C:\Users\Personal\aspnetcore.microservices\Contracts\bin\Release\net10.0\Contracts.deps.json
+C:\Users\Personal\aspnetcore.microservices\Contracts\bin\Release\net10.0\Contracts.runtimeconfig.json
+C:\Users\Personal\aspnetcore.microservices\Contracts\bin\Release\net10.0\Contracts.dll
+C:\Users\Personal\aspnetcore.microservices\Contracts\bin\Release\net10.0\Contracts.pdb
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.csproj.AssemblyReference.cache
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.AssemblyInfoInputs.cache
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.AssemblyInfo.cs
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.dll
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\refint\Contracts.dll
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.pdb
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\Contracts.genruntimeconfig.cache
+C:\Users\Personal\aspnetcore.microservices\Contracts\obj\Release\net10.0\ref\Contracts.dll

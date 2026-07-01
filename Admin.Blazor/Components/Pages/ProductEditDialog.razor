@@ -1,0 +1,45 @@
+@inject ISnackbar Snackbar
+
+<MudDialog>
+	<DialogContent>
+		@if (!IsCreate) { <MudText Typo="Typo.caption" Class="mud-text-secondary">Id: @Product.Id</MudText> }
+		<MudTextField @bind-Value="_no" Label="Item No" Required="true" />
+		<MudTextField @bind-Value="_name" Label="Name" Required="true" />
+		<MudTextField @bind-Value="_summary" Label="Summary" Lines="3" />
+		<MudNumericField @bind-Value="_price" Label="Price" Format="F2" />
+	</DialogContent>
+	<DialogActions>
+		<MudButton OnClick="Cancel">Cancel</MudButton>
+		<MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="Save">Save</MudButton>
+	</DialogActions>
+</MudDialog>
+
+@code {
+	[CascadingParameter] MudDialogInstance Dialog { get; set; } = default!;
+	[Parameter] public AdminProduct Product { get; set; } = default!;
+	[Parameter] public bool IsCreate { get; set; }
+
+	private string _no = string.Empty;
+	private string _name = string.Empty;
+	private string? _summary;
+	private decimal _price;
+
+	protected override void OnInitialized()
+	{
+		_no = Product.No;
+		_name = Product.Name;
+		_summary = Product.Summary;
+		_price = Product.Price;
+	}
+
+	private void Cancel() => Dialog.Cancel();
+	private void Save()
+	{
+		if (string.IsNullOrWhiteSpace(_no) || string.IsNullOrWhiteSpace(_name))
+		{
+			Snackbar.Add("Item No and Name are required.", Severity.Warning);
+			return;
+		}
+		Dialog.Close(DialogResult.Ok(new AdminProduct { Id = Product.Id, Name = _name, No = _no, Summary = _summary, Price = _price }));
+	}
+}

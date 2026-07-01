@@ -1,0 +1,190 @@
+ version: '3.8'
+ services:
+ 
+ #database section
+
+ #orderdb: sql server
+  orderdb:
+    container_name: orderdb
+    environment:
+      SA_PASSWORD: "PasswOrd!"
+      ACCEPT_EULA: "Y"
+    restart: always
+    volumes:
+      - sqlserver_data:/var/lib/sqlserver/data
+    ports:
+      - "11435:1433"
+
+  #productdb: mysql
+  productdb:
+    container_name: productdb
+    environment:
+      MYSQL_ROOT_PASSWORD: "PasswOrd!"
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "13306:3306"
+
+  #customerdb: postgres
+  customerdb:
+    container_name: customerdb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin1234
+      - POSTGRES_DB=CustomerDb 
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "15433:5432"
+
+  #basketdb: redis
+  basketdb:
+    container_name: basketdb
+    restart: always
+    ports:
+      - "16379:6379"
+
+  #inventorydb: mongo
+  inventorydb:
+    container_name: inventorydb
+    restart: always
+    ports:
+      - "37017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+#infrastructure section 
+  rabbitmq: 
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "15673:5672"
+      - "25672:15672"
+
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dinhquockhanh1998@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin1234
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
+
+  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data 
+  
+  elasticsearch:    
+    container_name: elasticsearch
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+  kibana:    
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+
+  product.api:
+    container_name: product.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnectionString=Server=productdb;Port=3306;Database=ProductDB;Uid=root;Pwd=PasswOrd!;
+      - DatabaseSettings__Provider=MySql
+      - DatabaseSettings__ConnectionString=Server=productdb;Port=3306;Database=ProductDB;Uid=root;Pwd=PasswOrd!;
+    depends_on:
+      - productdb
+    ports:
+      - "5102:8080"
+
+  customer.api:
+    container_name: customer.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnectionString=Host=customerdb;Port=5432;Database=CustomerDb;Username=admin;Password=admin1234
+      - DatabaseSettings__Provider=PostgreSql
+      - DatabaseSettings__ConnectionString=Host=customerdb;Port=5432;Database=CustomerDb;Username=admin;Password=admin1234
+    depends_on:
+      - customerdb
+    ports:
+      - "5103:8080"
+
+  basket.api:
+    container_name: basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - CacheSettings__ConnectionString=basketdb:6379
+      - EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672
+      - GrpcSettings__StockUrl=http://inventory.api:8080
+    depends_on:
+      - basketdb
+      - rabbitmq
+      - inventory.api
+    ports:
+      - "5004:8080"
+
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=PasswOrd!;TrustServerCertificate=True
+      - DatabaseSettings__Provider=SqlServer
+      - DatabaseSettings__ConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=PasswOrd!;TrustServerCertificate=True
+      - EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672
+    depends_on:
+      - orderdb
+      - rabbitmq
+    ports:
+      - "5005:8080"
+
+  inventory.api:
+    container_name: inventory.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - MongoDbSettings__ConnectionString=mongodb://inventorydb:27017
+      - MongoDbSettings__DatabaseName=InventoryDb
+      - MongoDbSettings__CollectionName=InventoryEntries
+    depends_on:
+      - inventorydb
+    ports:
+      - "5006:8080"
+
+  ocelot.gateway:
+    container_name: ocelot.gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - product.api
+      - customer.api
+      - basket.api
+      - ordering.api
+      - inventory.api
+    ports:
+      - "5000:8080"
+   

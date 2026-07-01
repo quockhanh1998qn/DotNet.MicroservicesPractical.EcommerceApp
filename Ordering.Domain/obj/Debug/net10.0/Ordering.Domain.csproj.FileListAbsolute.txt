@@ -1,0 +1,15 @@
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\bin\Debug\net10.0\Ordering.Domain.deps.json
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\bin\Debug\net10.0\Ordering.Domain.dll
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\bin\Debug\net10.0\Ordering.Domain.pdb
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\bin\Debug\net10.0\Contracts.dll
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\bin\Debug\net10.0\Contracts.pdb
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.csproj.AssemblyReference.cache
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.AssemblyInfoInputs.cache
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.AssemblyInfo.cs
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.5B2A0ED2.Up2Date
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.dll
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\refint\Ordering.Domain.dll
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\Ordering.Domain.pdb
+C:\Users\Personal\aspnetcore.microservices\Ordering.Domain\obj\Debug\net10.0\ref\Ordering.Domain.dll

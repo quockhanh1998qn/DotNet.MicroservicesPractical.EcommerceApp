@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
+WORKDIR /app
+
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends ca-certificates \
+	&& update-ca-certificates \
+	&& rm -rf /var/lib/apt/lists/*
+
+COPY Identity.Server/bin/Release/net10.0/publish/ .
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "Identity.Server.dll"]

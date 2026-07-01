@@ -1,0 +1,38 @@
+@page "/orders"
+@attribute [Authorize(Policy = "AdminOnly")]
+@inject OrderApiClient Api
+@inject ISnackbar Snackbar
+
+<PageTitle>Orders</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">Orders</MudText>
+
+<MudPaper Class="pa-4 mb-4 d-flex align-center gap-3">
+	<MudTextField @bind-Value="_userName" Placeholder="UserName" />
+	<MudButton StartIcon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="LoadAsync">Search</MudButton>
+</MudPaper>
+
+<MudTable Items="_items" Hover="true" Loading="_loading">
+	<HeaderContent><MudTh>Id</MudTh><MudTh>User</MudTh><MudTh>Customer</MudTh><MudTh>Email</MudTh><MudTh>Total</MudTh></HeaderContent>
+	<RowTemplate>
+		<MudTd>@context.Id</MudTd>
+		<MudTd>@context.UserName</MudTd>
+		<MudTd>@context.FirstName @context.LastName</MudTd>
+		<MudTd>@context.EmailAddress</MudTd>
+		<MudTd>@context.TotalPrice.ToString("C")</MudTd>
+	</RowTemplate>
+</MudTable>
+
+@code {
+	private string _userName = string.Empty;
+	private bool _loading;
+	private List<AdminOrder> _items = new();
+
+	private async Task LoadAsync()
+	{
+		if (string.IsNullOrWhiteSpace(_userName)) { Snackbar.Add("Enter a user name", Severity.Warning); return; }
+		_loading = true;
+		try { _items = (await Api.ListByUserAsync(_userName))?.ToList() ?? new(); }
+		catch (Exception ex) { Snackbar.Add($"Failed to load orders: {ex.Message}", Severity.Error); }
+		finally { _loading = false; }
+	}
+}

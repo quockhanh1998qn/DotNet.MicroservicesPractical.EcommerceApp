@@ -1,0 +1,69 @@
+@page "/inventory"
+@attribute [Authorize(Policy = "AdminOnly")]
+@implements IDisposable
+@inject InventoryApiClient Api
+@inject StockUpdateBroadcaster Broadcaster
+@inject ISnackbar Snackbar
+
+<PageTitle>Inventory</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-2">Inventory</MudText>
+<MudText Typo="Typo.body2" Class="mb-4 mud-text-secondary">Real-time stock updates via RabbitMQ → SignalR.</MudText>
+
+<MudPaper Class="pa-4 mb-4 d-flex align-center gap-3">
+	<MudTextField @bind-Value="_itemNo" Placeholder="Item No" />
+	<MudButton StartIcon="@Icons.Material.Filled.Search" Variant="Variant.Filled" Color="Color.Primary" OnClick="LoadAsync">Lookup</MudButton>
+</MudPaper>
+
+<MudTable Items="_entries" Hover="true" Loading="_loading">
+	<HeaderContent><MudTh>Id</MudTh><MudTh>Item No</MudTh><MudTh>Quantity</MudTh></HeaderContent>
+	<RowTemplate>
+		<MudTd>@context.Id</MudTd>
+		<MudTd>@context.ItemNo</MudTd>
+		<MudTd>@context.Quantity</MudTd>
+	</RowTemplate>
+</MudTable>
+
+@if (_lastEvent is not null)
+{
+	<MudAlert Severity="Severity.Info" Class="mt-4">
+		Last live update: <b>@_lastEvent.ItemNo</b> qty=<b>@_lastEvent.Quantity</b> (@_lastEvent.Reason) at @_lastEvent.CreationDate.ToLocalTime().ToString("HH:mm:ss")
+	</MudAlert>
+}
+
+@code {
+	private string _itemNo = string.Empty;
+	private bool _loading;
+	private List<AdminInventory> _entries = new();
+	private EventBus.Messages.IntegrationEvents.Events.StockUpdatedEvent? _lastEvent;
+	private Func<EventBus.Messages.IntegrationEvents.Events.StockUpdatedEvent, Task>? _subscription;
+
+	protected override void OnInitialized()
+	{
+		_subscription = OnStockUpdatedAsync;
+		Broadcaster.StockUpdated += _subscription;
+	}
+
+	private async Task OnStockUpdatedAsync(EventBus.Messages.IntegrationEvents.Events.StockUpdatedEvent evt)
+	{
+		_lastEvent = evt;
+		await InvokeAsync(StateHasChanged);
+		if (!string.IsNullOrEmpty(_itemNo) && string.Equals(evt.ItemNo, _itemNo, StringComparison.OrdinalIgnoreCase))
+		{
+			await LoadAsync();
+		}
+	}
+
+	private async Task LoadAsync()
+	{
+		if (string.IsNullOrWhiteSpace(_itemNo)) { Snackbar.Add("Enter an item number", Severity.Warning); return; }
+		_loading = true;
+		try { _entries = (await Api.ListByItemAsync(_itemNo))?.ToList() ?? new(); }
+		catch (Exception ex) { Snackbar.Add($"Failed to load inventory: {ex.Message}", Severity.Error); }
+		finally { _loading = false; }
+	}
+
+	public void Dispose()
+	{
+		if (_subscription is not null) Broadcaster.StockUpdated -= _subscription;
+	}
+}

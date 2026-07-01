@@ -1,0 +1,18 @@
+@page "/jobs"
+@attribute [Authorize(Policy = "AdminOnly")]
+@inject IConfiguration Configuration
+
+<PageTitle>Hangfire Jobs</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">Hangfire Jobs</MudText>
+
+<Admin.Blazor.Components.Shared.ExternalDashboardCard
+	Title="Hangfire Dashboard"
+	Url="@HangfireUrl"
+	Description="Background job scheduler and monitoring (basket reminders, e-mail notifications, recurring jobs)."
+	Icon="@Icons.Material.Filled.Schedule"
+	IconColor="Color.Secondary"
+	Note="Hangfire sets X-Frame-Options to deny cross-site embedding, so the dashboard opens in a new tab." />
+
+@code {
+	private string HangfireUrl => Configuration["ExternalUis:Hangfire"] ?? "http://localhost:5007/hangfire";
+}

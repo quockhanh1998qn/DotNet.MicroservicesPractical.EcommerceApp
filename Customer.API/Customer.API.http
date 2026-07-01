@@ -1,0 +1,6 @@
+@Customer.API_HostAddress = http://localhost:5003
+
+GET {{Customer.API_HostAddress}}/api/customers/
+Accept: application/json
+
+###

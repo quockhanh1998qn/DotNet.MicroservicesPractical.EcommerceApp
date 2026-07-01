@@ -1,0 +1,35 @@
+@page "/customers"
+@attribute [Authorize(Policy = "AdminOnly")]
+@inject CustomerApiClient Api
+@inject ISnackbar Snackbar
+
+<PageTitle>Customers</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">Customers</MudText>
+
+<MudPaper Class="pa-4 mb-4">
+	<MudButton StartIcon="@Icons.Material.Filled.Refresh" OnClick="LoadAsync">Refresh</MudButton>
+</MudPaper>
+
+<MudTable Items="_items" Hover="true" Striped="true" Loading="_loading">
+	<HeaderContent><MudTh>First Name</MudTh><MudTh>Last Name</MudTh><MudTh>Email</MudTh></HeaderContent>
+	<RowTemplate>
+		<MudTd>@context.FirstName</MudTd>
+		<MudTd>@context.LastName</MudTd>
+		<MudTd>@context.Email</MudTd>
+	</RowTemplate>
+</MudTable>
+
+@code {
+	private bool _loading;
+	private List<AdminCustomer> _items = new();
+
+	protected override Task OnInitializedAsync() => LoadAsync();
+
+	private async Task LoadAsync()
+	{
+		_loading = true;
+		try { _items = (await Api.ListAsync())?.ToList() ?? new(); }
+		catch (Exception ex) { Snackbar.Add($"Failed to load customers: {ex.Message}", Severity.Error); }
+		finally { _loading = false; }
+	}
+}

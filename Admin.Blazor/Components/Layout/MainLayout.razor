@@ -1,0 +1,37 @@
+@inherits LayoutComponentBase
+
+<MudThemeProvider IsDarkMode="@_isDark" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+	<MudAppBar Elevation="1" Color="Color.Primary">
+		<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(() => _drawerOpen = !_drawerOpen)" />
+		<MudText Typo="Typo.h6" Class="ml-2">Tedu Admin</MudText>
+		<MudSpacer />
+		<MudIconButton Icon="@(_isDark ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)" Color="Color.Inherit" OnClick="@(() => _isDark = !_isDark)" />
+		<AuthorizeView>
+			<Authorized>
+				<MudText Class="mx-2">@context.User.Identity?.Name</MudText>
+				<MudButton Variant="Variant.Text" Color="Color.Inherit" Href="/account/logout">Sign out</MudButton>
+			</Authorized>
+			<NotAuthorized>
+				<MudButton Variant="Variant.Text" Color="Color.Inherit" Href="/account/login">Sign in</MudButton>
+			</NotAuthorized>
+		</AuthorizeView>
+	</MudAppBar>
+	<MudDrawer @bind-Open="_drawerOpen" Elevation="2" ClipMode="DrawerClipMode.Always">
+		<NavMenu />
+	</MudDrawer>
+	<MudMainContent>
+		<MudContainer MaxWidth="MaxWidth.False" Class="pa-6">
+			@Body
+		</MudContainer>
+	</MudMainContent>
+</MudLayout>
+
+@code {
+	private bool _drawerOpen = true;
+	private bool _isDark;
+}

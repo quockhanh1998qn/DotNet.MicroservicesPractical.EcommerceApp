@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'ngx-toastr/toastr';
+
+html, body { height: 100%; margin: 0; font-family: 'Roboto', system-ui, sans-serif; }
+
+.app-container { @apply min-h-screen flex flex-col bg-slate-50; }
+.app-toolbar   { @apply flex items-center gap-4 bg-brand-600 text-white px-4 py-3 shadow; }
+.app-content   { @apply flex-1 p-4 max-w-7xl mx-auto w-full; }
+
+.btn-primary   { @apply px-3 py-2 rounded bg-brand-600 text-white hover:bg-brand-700 disabled:opacity-50; }
+.btn-secondary { @apply px-3 py-2 rounded border border-slate-300 hover:bg-slate-100; }
+.card          { @apply bg-white rounded shadow p-4; }

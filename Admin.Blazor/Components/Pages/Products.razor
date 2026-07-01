@@ -1,0 +1,84 @@
+@page "/products"
+@attribute [Authorize(Policy = "AdminOnly")]
+@inject ProductApiClient Api
+@inject ISnackbar Snackbar
+@inject IDialogService Dialog
+
+<PageTitle>Products</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">Products</MudText>
+
+<MudPaper Class="pa-4 mb-4 d-flex align-center gap-3">
+	<MudTextField @bind-Value="_search" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Immediate="true" DebounceInterval="350" OnDebounceIntervalElapsed="LoadAsync" />
+	<MudButton StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary" Variant="Variant.Filled" OnClick="OpenCreateAsync">New Product</MudButton>
+	<MudButton StartIcon="@Icons.Material.Filled.Refresh" OnClick="LoadAsync">Refresh</MudButton>
+</MudPaper>
+
+<MudTable Items="_items" Hover="true" Bordered="false" Striped="true" Loading="_loading">
+	<HeaderContent>
+		<MudTh>Item No</MudTh><MudTh>Name</MudTh><MudTh>Price</MudTh><MudTh>Summary</MudTh><MudTh></MudTh>
+	</HeaderContent>
+	<RowTemplate>
+		<MudTd>@context.No</MudTd>
+		<MudTd>@context.Name</MudTd>
+		<MudTd>@context.Price.ToString("C")</MudTd>
+		<MudTd>@context.Summary</MudTd>
+		<MudTd>
+			<MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="() => OpenEditAsync(context)" />
+			<MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" Size="Size.Small" OnClick="() => DeleteAsync(context)" />
+		</MudTd>
+	</RowTemplate>
+</MudTable>
+
+@code {
+	private string? _search;
+	private bool _loading;
+	private List<AdminProduct> _items = new();
+
+	protected override Task OnInitializedAsync() => LoadAsync();
+
+	private async Task LoadAsync()
+	{
+		_loading = true;
+		try
+		{
+			var result = await Api.ListAsync(1, 50, _search);
+			_items = result?.Data?.ToList() ?? new();
+		}
+		catch (Exception ex) { Snackbar.Add($"Failed to load products: {ex.Message}", Severity.Error); }
+		finally { _loading = false; }
+	}
+
+	private async Task OpenCreateAsync()
+	{
+		var product = new AdminProduct();
+		var dlg = await Dialog.ShowAsync<ProductEditDialog>("New Product", new DialogParameters { ["Product"] = product, ["IsCreate"] = true });
+		var result = await dlg.Result;
+		if (result is { Canceled: false, Data: AdminProduct created })
+		{
+			var resp = await Api.CreateAsync(created);
+			if (resp.IsSuccessStatusCode) { Snackbar.Add("Product created", Severity.Success); await LoadAsync(); }
+			else Snackbar.Add($"Create failed: {resp.StatusCode}", Severity.Error);
+		}
+	}
+
+	private async Task OpenEditAsync(AdminProduct product)
+	{
+		var dlg = await Dialog.ShowAsync<ProductEditDialog>("Edit Product", new DialogParameters { ["Product"] = product, ["IsCreate"] = false });
+		var result = await dlg.Result;
+		if (result is { Canceled: false, Data: AdminProduct updated })
+		{
+			var resp = await Api.UpdateAsync(updated);
+			if (resp.IsSuccessStatusCode) { Snackbar.Add("Product updated", Severity.Success); await LoadAsync(); }
+			else Snackbar.Add($"Update failed: {resp.StatusCode}", Severity.Error);
+		}
+	}
+
+	private async Task DeleteAsync(AdminProduct product)
+	{
+		var ok = await Dialog.ShowMessageBox("Delete", $"Delete product '{product.Name}'?", yesText: "Delete", cancelText: "Cancel");
+		if (ok != true) return;
+		var resp = await Api.DeleteAsync(product.Id);
+		if (resp.IsSuccessStatusCode) { Snackbar.Add("Product deleted", Severity.Success); await LoadAsync(); }
+		else Snackbar.Add($"Delete failed: {resp.StatusCode}", Severity.Error);
+	}
+}

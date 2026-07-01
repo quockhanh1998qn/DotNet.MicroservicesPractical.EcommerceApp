@@ -1,0 +1,558 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Personal\\aspnetcore.microservices\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\Personal\\aspnetcore.microservices\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40ABB90C-61ED-7042-84F6-2642D5493F56}|HangFire.API\\HangFire.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\hangfire.api\\controllers\\reminderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40ABB90C-61ED-7042-84F6-2642D5493F56}|HangFire.API\\HangFire.API.csproj|solutionrelative:hangfire.api\\controllers\\reminderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\product.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\product.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F72E50-B86A-48A6-4252-6FDC98C636E8}|Shared\\Shared.csproj|c:\\Users\\personal\\aspnetcore.microservices\\shared\\dtos\\product\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F72E50-B86A-48A6-4252-6FDC98C636E8}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\product\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F72E50-B86A-48A6-4252-6FDC98C636E8}|Shared\\Shared.csproj|c:\\Users\\personal\\aspnetcore.microservices\\shared\\dtos\\product\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F72E50-B86A-48A6-4252-6FDC98C636E8}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\product\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22F72E50-B86A-48A6-4252-6FDC98C636E8}|Shared\\Shared.csproj|c:\\Users\\personal\\aspnetcore.microservices\\shared\\dtos\\product\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22F72E50-B86A-48A6-4252-6FDC98C636E8}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\product\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\entities\\catalogproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\entities\\catalogproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\extensions\\hostextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\extensions\\hostextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\extensions\\configurehostextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\extensions\\configurehostextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\Users\\personal\\aspnetcore.microservices\\infrastructure\\common\\repositorybaseasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\common\\repositorybaseasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\Users\\personal\\aspnetcore.microservices\\infrastructure\\common\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\common\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\common\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\common\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\common\\interfaces\\irepositorybaseasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\common\\interfaces\\irepositorybaseasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\persistence\\productcontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\persistence\\productcontextseed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\persistence\\productcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\persistence\\productcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\extensions\\applicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\extensions\\applicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\Personal\\aspnetcore.microservices\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\domains\\entityauditbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\domains\\entityauditbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\domains\\entitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\domains\\entitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\domains\\interfaces\\iaudittable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\domains\\interfaces\\iaudittable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\domains\\interfaces\\iusertracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\domains\\interfaces\\iusertracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\domains\\interfaces\\idatetracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\domains\\interfaces\\idatetracking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\Personal\\aspnetcore.microservices\\docker-compose.override.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:docker-compose.override.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|c:\\Users\\personal\\aspnetcore.microservices\\contracts\\domains\\interfaces\\ientitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D819584-4EC2-52ED-CD78-AA7BA4C26214}|Contracts\\Contracts.csproj|solutionrelative:contracts\\domains\\interfaces\\ientitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|c:\\Users\\personal\\aspnetcore.microservices\\product.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{05B4568D-511E-4F3E-1881-F4A770AAFBAE}|Product.API\\Product.API.csproj|solutionrelative:product.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|C:\\Users\\Personal\\aspnetcore.microservices\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RemindersController.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\HangFire.API\\Controllers\\RemindersController.cs",
+              "RelativeDocumentMoniker": "HangFire.API\\Controllers\\RemindersController.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\HangFire.API\\Controllers\\RemindersController.cs",
+              "RelativeToolTip": "HangFire.API\\Controllers\\RemindersController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T10:42:42.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAAAKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-28T07:54:45.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.API.csproj",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Product.API.csproj",
+              "RelativeDocumentMoniker": "Product.API\\Product.API.csproj",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Product.API.csproj",
+              "RelativeToolTip": "Product.API\\Product.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-17T07:52:47.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Product.API\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\MappingProfile.cs",
+              "RelativeToolTip": "Product.API\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:41:23.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UpdateProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Shared\\DTOs\\Product\\UpdateProductDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DTOs\\Product\\UpdateProductDto.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Shared\\DTOs\\Product\\UpdateProductDto.cs",
+              "RelativeToolTip": "Shared\\DTOs\\Product\\UpdateProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:39:39.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Shared\\DTOs\\Product\\CreateProductDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DTOs\\Product\\CreateProductDto.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Shared\\DTOs\\Product\\CreateProductDto.cs",
+              "RelativeToolTip": "Shared\\DTOs\\Product\\CreateProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:39:28.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Shared\\DTOs\\Product\\ProductDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DTOs\\Product\\ProductDto.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Shared\\DTOs\\Product\\ProductDto.cs",
+              "RelativeToolTip": "Shared\\DTOs\\Product\\ProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:39:09.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\ServiceExtensions.cs",
+              "RelativeDocumentMoniker": "Product.API\\Extensions\\ServiceExtensions.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\ServiceExtensions.cs",
+              "RelativeToolTip": "Product.API\\Extensions\\ServiceExtensions.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCQAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T10:55:31.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Common\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Contracts\\Common\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Common\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Contracts\\Common\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T12:17:04.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HostExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\HostExtensions.cs",
+              "RelativeDocumentMoniker": "Product.API\\Extensions\\HostExtensions.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\HostExtensions.cs",
+              "RelativeToolTip": "Product.API\\Extensions\\HostExtensions.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAADwvwYAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T19:58:23.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Product.API\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Product.API\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAmwCIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T09:03:45.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RepositoryBaseAsync.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Infrastructure\\Common\\RepositoryBaseAsync.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Common\\RepositoryBaseAsync.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Infrastructure\\Common\\RepositoryBaseAsync.cs",
+              "RelativeToolTip": "Infrastructure\\Common\\RepositoryBaseAsync.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAswF4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T08:25:43.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CatalogProduct.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Entities\\CatalogProduct.cs",
+              "RelativeDocumentMoniker": "Product.API\\Entities\\CatalogProduct.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Entities\\CatalogProduct.cs",
+              "RelativeToolTip": "Product.API\\Entities\\CatalogProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:15:27.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Infrastructure\\Common\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Common\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Infrastructure\\Common\\UnitOfWork.cs",
+              "RelativeToolTip": "Infrastructure\\Common\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T08:25:54.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Product.API\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "Product.API\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T09:18:42.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Product.API\\Repositories\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "Product.API\\Repositories\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T09:15:19.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ConfigureHostExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\ConfigureHostExtensions.cs",
+              "RelativeDocumentMoniker": "Product.API\\Extensions\\ConfigureHostExtensions.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\ConfigureHostExtensions.cs",
+              "RelativeToolTip": "Product.API\\Extensions\\ConfigureHostExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T10:55:17.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Program.cs",
+              "RelativeDocumentMoniker": "Product.API\\Program.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Program.cs",
+              "RelativeToolTip": "Product.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T10:58:58.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IRepositoryBaseAsync.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Common\\Interfaces\\IRepositoryBaseAsync.cs",
+              "RelativeDocumentMoniker": "Contracts\\Common\\Interfaces\\IRepositoryBaseAsync.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Common\\Interfaces\\IRepositoryBaseAsync.cs",
+              "RelativeToolTip": "Contracts\\Common\\Interfaces\\IRepositoryBaseAsync.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T12:21:23.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductContextSeed.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Persistence\\ProductContextSeed.cs",
+              "RelativeDocumentMoniker": "Product.API\\Persistence\\ProductContextSeed.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Persistence\\ProductContextSeed.cs",
+              "RelativeToolTip": "Product.API\\Persistence\\ProductContextSeed.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAYwA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T21:07:37.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductContext.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Persistence\\ProductContext.cs",
+              "RelativeDocumentMoniker": "Product.API\\Persistence\\ProductContext.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Persistence\\ProductContext.cs",
+              "RelativeToolTip": "Product.API\\Persistence\\ProductContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:35:06.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApplicationExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\ApplicationExtensions.cs",
+              "RelativeDocumentMoniker": "Product.API\\Extensions\\ApplicationExtensions.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Extensions\\ApplicationExtensions.cs",
+              "RelativeToolTip": "Product.API\\Extensions\\ApplicationExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T10:54:49.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "global.json",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\global.json",
+              "RelativeDocumentMoniker": "global.json",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\global.json",
+              "RelativeToolTip": "global.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-11T20:53:45.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Product.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\appsettings.json",
+              "RelativeToolTip": "Product.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-11T11:32:11.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EntityAuditBase.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\EntityAuditBase.cs",
+              "RelativeDocumentMoniker": "Contracts\\Domains\\EntityAuditBase.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\EntityAuditBase.cs",
+              "RelativeToolTip": "Contracts\\Domains\\EntityAuditBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:21:12.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EntityBase.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\EntityBase.cs",
+              "RelativeDocumentMoniker": "Contracts\\Domains\\EntityBase.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\EntityBase.cs",
+              "RelativeToolTip": "Contracts\\Domains\\EntityBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:21:23.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IAuditTable.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IAuditTable.cs",
+              "RelativeDocumentMoniker": "Contracts\\Domains\\Interfaces\\IAuditTable.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IAuditTable.cs",
+              "RelativeToolTip": "Contracts\\Domains\\Interfaces\\IAuditTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:19:41.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IUserTracking.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IUserTracking.cs",
+              "RelativeDocumentMoniker": "Contracts\\Domains\\Interfaces\\IUserTracking.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IUserTracking.cs",
+              "RelativeToolTip": "Contracts\\Domains\\Interfaces\\IUserTracking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:20:26.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IDateTracking.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IDateTracking.cs",
+              "RelativeDocumentMoniker": "Contracts\\Domains\\Interfaces\\IDateTracking.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IDateTracking.cs",
+              "RelativeToolTip": "Contracts\\Domains\\Interfaces\\IDateTracking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:20:02.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-03-11T09:45:43.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IEntityBase.cs",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IEntityBase.cs",
+              "RelativeDocumentMoniker": "Contracts\\Domains\\Interfaces\\IEntityBase.cs",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Contracts\\Domains\\Interfaces\\IEntityBase.cs",
+              "RelativeToolTip": "Contracts\\Domains\\Interfaces\\IEntityBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T11:20:14.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Product.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\Product.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Product.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-11T10:50:42.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Personal\\aspnetcore.microservices\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Personal\\aspnetcore.microservices\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-03-11T09:43:24.848Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+version: '3.8'
+
+services:
+  # database section
+  orderdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
+  productdb:
+    image: mysql:8.0.29
+
+  customerdb:
+    image: postgres:alpine3.16
+
+  basketdb:
+    image: redis:alpine
+
+  inventorydb:
+    image: mongo
+
+  # infrastructure section
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  pgadmin:
+    image: dpage/pgadmin4
+
+  portainer:
+    image: portainer/portainer-ce
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.2
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.2
+
+  # microservices section
+  product.api:
+    image: ${DOCKER_REGISTRY-}productapi
+    build:
+      context: .
+      dockerfile: Product.API/Dockerfile
+    depends_on:
+      - productdb
+
+  customer.api:
+    image: ${DOCKER_REGISTRY-}customerapi
+    build:
+      context: .
+      dockerfile: Customer.API/Dockerfile
+    depends_on:
+      - customerdb
+
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: Basket.API/Dockerfile
+    depends_on:
+      - basketdb
+      - rabbitmq
+
+  ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: .
+      dockerfile: Ordering.API/Dockerfile
+    depends_on:
+      - orderdb
+      - rabbitmq
+
+  inventory.api:
+    image: ${DOCKER_REGISTRY-}inventoryapi
+    build:
+      context: .
+      dockerfile: Inventory.API/Dockerfile
+    depends_on:
+      - inventorydb
+
+  hangfire.api:
+    image: ${DOCKER_REGISTRY-}hangfireapi
+    build:
+      context: .
+      dockerfile: HangFire.API/Dockerfile
+    depends_on:
+      - orderdb
+      - basket.api
+
+  identity.server:
+    image: ${DOCKER_REGISTRY-}identityserver
+    build:
+      context: .
+      dockerfile: Identity.Server/Dockerfile
+    depends_on:
+      - orderdb
+
+  webhealth.status:
+    image: ${DOCKER_REGISTRY-}webhealthstatus
+    build:
+      context: .
+      dockerfile: WebHealthStatus/Dockerfile
+
+  webapp.angular:
+    image: ${DOCKER_REGISTRY-}webappangular
+    build:
+      context: .
+      dockerfile: WebApp.Angular/Dockerfile
+    depends_on:
+      - ocelot.gateway
+      - identity.server
+
+  admin.blazor:
+    image: ${DOCKER_REGISTRY-}adminblazor
+    build:
+      context: .
+      dockerfile: Admin.Blazor/Dockerfile
+    depends_on:
+      - ocelot.gateway
+      - identity.server
+      - rabbitmq
+
+  ocelot.gateway:
+    image: ${DOCKER_REGISTRY-}ocelotgateway
+    build:
+      context: .
+      dockerfile: OcelotApiGw/Dockerfile
+    depends_on:
+      - product.api
+      - customer.api
+      - basket.api
+      - ordering.api
+      - inventory.api
+      - hangfire.api
+
+networks:
+  default:
+    name: tedu_microservices
+    driver: bridge
+
+volumes:
+  sqlserver_data:
+    name: sqlserver_data
+  mysql_data:
+    name: mysql_data
+  postgres_data:
+    name: postgres_data
+  portainer_data:
+    name: portainer_data
+  elasticsearch_data:
+    name: elasticsearch_data
+  jaeger_data:
+    name: jaeger_data
+  mongo_data: 
+    name: mongo_data
+  pgadmin_data:
+    name: pgadmin_data

@@ -1,0 +1,35 @@
+@* Reusable card to launch an external tool that cannot be embedded due to X-Frame-Options / CSP. *@
+
+<MudPaper Class="pa-6" Elevation="2">
+	<div class="d-flex align-center mb-4" style="gap:16px;">
+		<MudIcon Icon="@Icon" Size="Size.Large" Color="@IconColor" />
+		<div>
+			<MudText Typo="Typo.h5">@Title</MudText>
+			<MudText Typo="Typo.body2" Class="mud-text-secondary">@Description</MudText>
+		</div>
+	</div>
+	<MudDivider Class="my-3" />
+	<div class="d-flex align-center" style="gap:12px;">
+		<MudButton Variant="Variant.Filled"
+		           Color="Color.Primary"
+		           Href="@Url"
+		           Target="_blank"
+		           StartIcon="@Icons.Material.Filled.OpenInNew">
+			Open @Title
+		</MudButton>
+		<MudLink Href="@Url" Target="_blank" Class="mud-text-secondary">@Url</MudLink>
+	</div>
+	@if (!string.IsNullOrEmpty(Note))
+	{
+		<MudAlert Severity="Severity.Info" Class="mt-4">@Note</MudAlert>
+	}
+</MudPaper>
+
+@code {
+	[Parameter, EditorRequired] public string Title { get; set; } = string.Empty;
+	[Parameter, EditorRequired] public string Url { get; set; } = string.Empty;
+	[Parameter] public string Description { get; set; } = string.Empty;
+	[Parameter] public string Icon { get; set; } = Icons.Material.Filled.Launch;
+	[Parameter] public Color IconColor { get; set; } = Color.Primary;
+	[Parameter] public string? Note { get; set; }
+}

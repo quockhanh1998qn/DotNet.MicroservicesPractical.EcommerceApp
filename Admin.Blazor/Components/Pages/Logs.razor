@@ -1,0 +1,18 @@
+@page "/logs"
+@attribute [Authorize(Policy = "AdminOnly")]
+@inject IConfiguration Configuration
+
+<PageTitle>Logs</PageTitle>
+<MudText Typo="Typo.h4" Class="mb-4">Logs (Kibana)</MudText>
+
+<Admin.Blazor.Components.Shared.ExternalDashboardCard
+	Title="Kibana"
+	Url="@KibanaUrl"
+	Description="Search & visualize Serilog Elasticsearch indices (microservices-* / identity-* / hangfire-*) by correlation id, level, or service."
+	Icon="@Icons.Material.Filled.Article"
+	IconColor="Color.Info"
+	Note="Kibana sets a strict Content-Security-Policy that blocks iframe embedding; open it in a new tab." />
+
+@code {
+	private string KibanaUrl => Configuration["ExternalUis:Kibana"] ?? "http://localhost:5601/";
+}

@@ -1,0 +1,21 @@
+@Ordering.API_HostAddress = http://localhost:5110
+
+GET {{Ordering.API_HostAddress}}/api/orders/swn
+Accept: application/json
+
+###
+
+POST {{Ordering.API_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "userName": "swn",
+  "firstName": "Tedu",
+  "lastName": "User",
+  "emailAddress": "swn@example.com",
+  "shippingAddress": "123 Main",
+  "invoiceAddress": "123 Main",
+  "totalPrice": 250.0
+}
+
+###

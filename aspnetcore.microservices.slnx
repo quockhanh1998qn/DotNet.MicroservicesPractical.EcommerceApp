@@ -1,0 +1,61 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.override.yml" />
+    <File Path="docker-compose.yml" />
+    <File Path="global.json" />
+    <File Path="microservice_course_architecture.png" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/ApiGateways/">
+    <Project Path="OcelotApiGw/OcelotApiGw.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="Common.Auth/Common.Auth.csproj" />
+    <Project Path="Common.Logging/Common.Logging.csproj" />
+    <Project Path="Contracts/Contracts.csproj" />
+    <Project Path="EventBus.Messages/EventBus.Messages.csproj" />
+    <Project Path="Infrastructure/Infrastructure.csproj" />
+    <Project Path="Shared/Shared.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/Basket/">
+    <Project Path="Basket.API/Basket.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Customer/">
+    <Project Path="Customer.API/Customer.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Inventory/">
+    <Project Path="Inventory.API/Inventory.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Ordering/">
+    <Project Path="Ordering.API/Ordering.API.csproj" />
+    <Project Path="Ordering.Application/Ordering.Application.csproj" />
+    <Project Path="Ordering.Domain/Ordering.Domain.csproj" />
+    <Project Path="Ordering.Infrastructure/Ordering.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Product/">
+    <Project Path="Product.API/Product.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/ScheduledJob/">
+    <Project Path="HangFire.API/HangFire.API.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/Identity/">
+    <Project Path="Identity.Server/Identity.Server.csproj" />
+  </Folder>
+  <Folder Name="/src/WebApps/">
+    <Project Path="WebHealthStatus/WebHealthStatus.csproj" />
+    <Project Path="Admin.Blazor/Admin.Blazor.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Basket.API.UnitTests/Basket.API.UnitTests.csproj" />
+    <Project Path="tests/Common.Auth.UnitTests/Common.Auth.UnitTests.csproj" />
+    <Project Path="tests/Common.Logging.UnitTests/Common.Logging.UnitTests.csproj" />
+    <Project Path="tests/Customer.API.UnitTests/Customer.API.UnitTests.csproj" />
+    <Project Path="tests/Infrastructure.UnitTests/Infrastructure.UnitTests.csproj" />
+    <Project Path="tests/Inventory.API.UnitTests/Inventory.API.UnitTests.csproj" />
+    <Project Path="tests/Ordering.Application.UnitTests/Ordering.Application.UnitTests.csproj" />
+    <Project Path="tests/Product.API.UnitTests/Product.API.UnitTests.csproj" />
+  </Folder>
+  <Project Path="aspnetcore.microservices/aspnetcore.microservices.csproj" />
+</Solution>

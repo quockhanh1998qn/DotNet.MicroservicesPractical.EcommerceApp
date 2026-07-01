@@ -1,0 +1,109 @@
+SECTION 2 – Triển khai Product.API Microservices với MySQL
+Khởi tạo các Entity, Dtos, Repository Pattern cho Product Microservices
+Triển khai các phương thức CRUD cho Product.API
+Chạy thử Product.API Microservices trong môi trường Development
+Containerize Product.API Microservices với MySQL
+
+SECTION 3 – Triển khai Customer.API Microservices với Minimal API & PostgreSQL
+Tìm hiểu về PostgreSQL
+Khởi tạo Project Web API và các Entity, Dtos cho Customer.API Microservices
+Xây dựng Repository Pattern cho Customer.API Microservices
+Triển khai các CRUD API cho Customer.API Microservices
+Chạy thử Customer.API Microservices trong môi trường Development
+Containerize Customer.API Microservices với PostgreSQL
+Livecode tổng kết Section 1-2-3
+
+SECTION 4 – Triển khai Basket.API Microservices với Redis
+Tìm hiểu về Redis
+Khởi tạo Project Web API và các Entity, Dtos cho Basket.API Microservices
+Xây dựng Repository Pattern cho Basket.API Microservices
+Kết nối Basket.API Microservices với Redis
+Triển khai các API: Get, Update, Delete cho Basket.API Microservices
+Chạy thử Basket.API Microservices trong môi trường Development
+Containerize Basket.API Microservices với Redis sử dụng Docker Compose
+
+SECTION 5 – Triển khai Ordering.API Microservices với SQL Server, Clean Architecture & CQRS
+Giới thiệu tổng quan về: SOLID, CQRS
+Khởi tạo Project Web API và Clean Architecture Layers
+Xây dựng Domain Layer và các Entity
+Xây dựng Application Layer với CQRS Pattern
+Xây dựng Infrastructure Layer
+Triển khai EF Core Migrations, Code-First, Seeding Data
+Triển khai Email Service với Google SMTP
+Containerize Ordering.API Microservices với SQL Server
+
+SECTION 6 – Giao tiếp đồng bộ giữa các Microservices (Microservices Communication)
+Giới thiệu về Microservices Communication
+Giới thiệu về MassTransit và 2 ứng dụng phổ biến: RabbitMQ, Kafka
+Xây dựng 1 ứng dụng console tìm hiểu về RabbitMQ
+Tích hợp RabbitMQ vào Basket.API Microservices - Publishing
+Tích hợp RabbitMQ vào Ordering.API Microservices – Consumer
+Containerize Basket.API và Ordering.API Microservices với RabbitMQ.
+Triển khai Event Sourcing with DDD Part I
+Triển khai Event Sourcing with DDD Part II
+
+SECTION 7 – Triển khai Inventory.API Microservices với MongoDB
+Tìm hiểu về MongoDB
+Giới thiệu phương pháp tính tồn kho hiệu quả
+Khởi tạo Project Web API và các Entity, Dtos cho Inventory.API Microservices
+Xây dựng Repository Pattern cho Inventory.API Microservices
+Xây dựng Service Layer với CRUD methods và abstraction pagination.
+Triển khai các API cho Inventory.API Microservices
+Triển khai gRPC service cho Inventory Microservices
+Triển khai gRPC service cho Inventory Microservices Part II
+Consuming Stock gRPC service từ Basket Microservices
+Containerize Inventory API Microservices với MongoDB và gRPC
+
+SECTION 8 – Triển khai API Gateway Microservices và Gateway Routing Pattern, Load Balancing
+Tìm hiểu API Gateway và Gateway Routing Pattern
+Tìm hiểu Ocelot API Gateway
+Khởi tạo Ocelot API Gateway Microservice project
+Cấu hình ocelot.json file cho routing các Microservices
+Cấu hình Authentication cho Ocelot
+Cấu hình Rate Limiting module cho Ocelot
+Cấu hình Quality of Service (QoS) cho Ocelot
+Cấu hình Response Caching cho Ocelot
+Chạy thử API Gateway và điều hướng routing đến các Microservices.
+Containerize API Gateway
+
+SECTION 9 – Triển khai Scheduled Background Job Service
+Tìm hiểu về Background Job Service – Hangfire
+Tích hợp Hangfire vào dự án Microservices
+Tự động gửi email nếu khách hàng chưa checkout order
+
+SECTION 10 – Cấu hình nâng cao và một số extensions mở rộng
+Quản lý transaction giữa các Microservices.
+Tìm hiểu Elasticsearch và Kibana
+Tích hợp Serilog vào Elasticsearch và Kibana
+Handle logging các request giữa các Microservices
+Tìm hiểu thư viện Polly và các policies: Retry, Circuit Breaker, Timeout, Bulkhead, Cache, Fallback.
+Ứng dụng Polly vào các Microservices.
+Cài đặt Healthcheck cho các Microservices.
+Xây dựng ứng dụng Web App quản lý health status các Microservices.
+
+SECTION 11 – Authentication & Authorization Microservices với Identity Server
+Khởi tạo và cấu hình Identity Server
+Xây dựng Repository Pattern, Service Manager với Lazy Loading Service
+Xác thực User với Email, Reset Password.
+Khởi tạo các Entities ứng dụng cho việc phân quyền
+Xây dựng và chuẩn hoá các API cho xác thực, cấp quyền.
+Áp dụng Authentication & Authorization cho toàn bộ Microservices.
+
+SECTION 12 – Triển khai dự án Microservices trên môi trường Production với Azure Devops.
+Giới thiệu tổng quan về Duende Identity Server
+Khởi tạo Duende Identity Server với duende template
+Cấu hình Identity Server: Serilog, Scopes, Api Resources, Clients
+Cấu hình Identity Server: Migrating Config & Persisted DB
+Cấu hình Identity Server Part II: NET Core Identity
+Cấu hình Authentication, SMTP Email Service
+Xây dựng Repository Pattern, Repository Manager với Lazy Loading
+Khởi tạo Permission Entity, Repository, Presentation API Project
+Triển khai Permission API với Dapper và Store Procedures
+Triển khai Permission API với Dapper và Store Procedures Part II
+Triển khai Authentication & Authorization với Bearer policy
+Triển khai Permission List
+Áp dụng Authentication & Authorization cho Product Microservices.
+Áp dụng Authentication & Authorization cho Product Microservices Part II
+Cấu hình Authentication cho Ocelot API Gateway
+Containerize Identity Service và cấu hình Authentication & Authorization
+Containerize Identity Service và cấu hình Authentication & Authorization Part II

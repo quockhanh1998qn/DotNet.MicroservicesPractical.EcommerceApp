@@ -1,0 +1,12 @@
+@page "/"
+@attribute [Authorize(Policy = "AdminOnly")]
+
+<PageTitle>Dashboard</PageTitle>
+
+<MudText Typo="Typo.h4" Class="mb-4">Welcome to Tedu Admin</MudText>
+<MudGrid>
+	<MudItem xs="12" md="3"><MudPaper Class="pa-4"><MudText Typo="Typo.subtitle2">Products</MudText><MudButton Variant="Variant.Text" Color="Color.Primary" Href="/products">Manage</MudButton></MudPaper></MudItem>
+	<MudItem xs="12" md="3"><MudPaper Class="pa-4"><MudText Typo="Typo.subtitle2">Customers</MudText><MudButton Variant="Variant.Text" Color="Color.Primary" Href="/customers">Manage</MudButton></MudPaper></MudItem>
+	<MudItem xs="12" md="3"><MudPaper Class="pa-4"><MudText Typo="Typo.subtitle2">Inventory</MudText><MudButton Variant="Variant.Text" Color="Color.Primary" Href="/inventory">Real-time</MudButton></MudPaper></MudItem>
+	<MudItem xs="12" md="3"><MudPaper Class="pa-4"><MudText Typo="Typo.subtitle2">Orders</MudText><MudButton Variant="Variant.Text" Color="Color.Primary" Href="/orders">View</MudButton></MudPaper></MudItem>
+</MudGrid>

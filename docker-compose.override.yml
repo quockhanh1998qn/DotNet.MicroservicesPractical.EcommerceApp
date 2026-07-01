@@ -1,0 +1,310 @@
+ version: '3.8'
+ services:
+ 
+ #database section
+
+ #orderdb: sql server
+  orderdb:
+    container_name: orderdb
+    environment:
+      SA_PASSWORD: "PasswOrd!"
+      ACCEPT_EULA: "Y"
+    restart: always
+    volumes:
+      - sqlserver_data:/var/lib/sqlserver/data
+    ports:
+      - "11435:1433"
+
+  #productdb: mysql
+  productdb:
+    container_name: productdb
+    environment:
+      MYSQL_ROOT_PASSWORD: "PasswOrd!"
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "13306:3306"
+
+  #customerdb: postgres
+  customerdb:
+    container_name: customerdb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin1234
+      - POSTGRES_DB=CustomerDb 
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "15433:5432"
+
+  #basketdb: redis
+  basketdb:
+    container_name: basketdb
+    restart: always
+    ports:
+      - "16379:6379"
+
+  #inventorydb: mongo
+  inventorydb:
+    container_name: inventorydb
+    restart: always
+    ports:
+      - "37017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+#infrastructure section 
+  rabbitmq: 
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "15673:5672"
+      - "25672:15672"
+
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dinhquockhanh1998@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin1234
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
+
+  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data 
+  
+  elasticsearch:    
+    container_name: elasticsearch
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+  kibana:    
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+
+  product.api:
+    container_name: product.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnectionString=Server=productdb;Port=3306;Database=ProductDB;Uid=root;Pwd=PasswOrd!;
+      - DatabaseSettings__Provider=MySql
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - AuthSettings__Authority=http://identity.server:8080
+      - AuthSettings__Audience=tedu.microservices
+      - AuthSettings__RequiredScope=product.api
+      - DatabaseSettings__ConnectionString=Server=productdb;Port=3306;Database=ProductDB;Uid=root;Pwd=PasswOrd!;
+    depends_on:
+      - productdb
+    ports:
+      - "5102:8080"
+
+  customer.api:
+    container_name: customer.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnectionString=Host=customerdb;Port=5432;Database=CustomerDb;Username=admin;Password=admin1234
+      - DatabaseSettings__Provider=PostgreSql
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - AuthSettings__Authority=http://identity.server:8080
+      - AuthSettings__Audience=tedu.microservices
+      - AuthSettings__RequiredScope=customer.api
+      - DatabaseSettings__ConnectionString=Host=customerdb;Port=5432;Database=CustomerDb;Username=admin;Password=admin1234
+    depends_on:
+      - customerdb
+    ports:
+      - "5103:8080"
+
+  basket.api:
+    container_name: basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - CacheSettings__ConnectionString=basketdb:6379
+      - EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - AuthSettings__Authority=http://identity.server:8080
+      - AuthSettings__Audience=tedu.microservices
+      - AuthSettings__RequiredScope=basket.api
+      - GrpcSettings__StockUrl=http://inventory.api:8081
+    depends_on:
+      - basketdb
+      - rabbitmq
+      - inventory.api
+    ports:
+      - "5004:8080"
+
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=PasswOrd!;TrustServerCertificate=True
+      - DatabaseSettings__Provider=SqlServer
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - AuthSettings__Authority=http://identity.server:8080
+      - AuthSettings__Audience=tedu.microservices
+      - AuthSettings__RequiredScope=ordering.api
+      - DatabaseSettings__ConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=PasswOrd!;TrustServerCertificate=True
+      - EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672
+    depends_on:
+      - orderdb
+      - rabbitmq
+    ports:
+      - "5005:8080"
+
+  inventory.api:
+    container_name: inventory.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDbSettings__ConnectionString=mongodb://inventorydb:27017
+      - MongoDbSettings__DatabaseName=InventoryDb
+      - MongoDbSettings__CollectionName=InventoryEntries
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - AuthSettings__Authority=http://identity.server:8080
+      - AuthSettings__Audience=tedu.microservices
+      - AuthSettings__RequiredScope=inventory.api
+    depends_on:
+      - inventorydb
+    ports:
+      - "5006:8080"
+
+  hangfire.api:
+    container_name: hangfire.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - HangfireSettings__Route=/hangfire
+      - HangfireSettings__DashboardTitle=Background Jobs Dashboard
+      - HangfireSettings__Storage__ConnectionString=Server=orderdb;Database=HangfireDb;User Id=sa;Password=PasswOrd!;TrustServerCertificate=True
+      - EmailSettings__Host=
+      - EmailSettings__Port=587
+      - EmailSettings__UserName=
+      - EmailSettings__Password=
+      - EmailSettings__FromAddress=no-reply@tedu.local
+      - BasketReminderSettings__BasketApiBaseUrl=http://basket.api:8080/
+      - BasketReminderSettings__CustomerApiBaseUrl=http://customer.api:8080/
+      - BasketReminderSettings__ReminderDelayMinutes=10
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - AuthSettings__Authority=http://identity.server:8080
+      - AuthSettings__Audience=tedu.microservices
+      - AuthSettings__RequiredScope=hangfire.api
+    depends_on:
+      - orderdb
+      - basket.api
+    ports:
+      - "5007:8080"
+
+  identity.server:
+    container_name: identity.server
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__IdentitySqlConnection=Server=orderdb;Database=IdentityDb;User Id=sa;Password=PasswOrd!;TrustServerCertificate=True
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - IdentityServer__IssuerUri=http://localhost:5009
+      - EmailSettings__Host=
+      - EmailSettings__Port=587
+      - EmailSettings__FromAddress=no-reply@tedu.local
+    depends_on:
+      - orderdb
+    ports:
+      - "5009:8080"
+
+  webhealth.status:
+    container_name: webhealth.status
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - HealthChecksUI__HealthChecks__0__Name=Product.API
+      - HealthChecksUI__HealthChecks__0__Uri=http://product.api:8080/health
+      - HealthChecksUI__HealthChecks__1__Name=Customer.API
+      - HealthChecksUI__HealthChecks__1__Uri=http://customer.api:8080/health
+      - HealthChecksUI__HealthChecks__2__Name=Basket.API
+      - HealthChecksUI__HealthChecks__2__Uri=http://basket.api:8080/health
+      - HealthChecksUI__HealthChecks__3__Name=Ordering.API
+      - HealthChecksUI__HealthChecks__3__Uri=http://ordering.api:8080/health
+      - HealthChecksUI__HealthChecks__4__Name=Inventory.API
+      - HealthChecksUI__HealthChecks__4__Uri=http://inventory.api:8080/health
+      - HealthChecksUI__HealthChecks__5__Name=HangFire.API
+      - HealthChecksUI__HealthChecks__5__Uri=http://hangfire.api:8080/health
+    depends_on:
+      - product.api
+      - customer.api
+      - basket.api
+      - ordering.api
+      - inventory.api
+      - hangfire.api
+    ports:
+      - "5008:8080"
+
+  webapp.angular:
+    container_name: webapp.angular
+    depends_on:
+      - ocelot.gateway
+      - identity.server
+    ports:
+      - "4200:80"
+
+  admin.blazor:
+    container_name: admin.blazor
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - IdentityServer__Authority=http://identity.server:8080
+      - IdentityServer__Audience=tedu.microservices
+      - Gateway__BaseUrl=http://ocelot.gateway:8080
+      - EventBus__Host=amqp://guest:guest@rabbitmq:5672
+      - ElasticConfiguration__Uri=http://elasticsearch:9200
+      - ExternalUis__HealthChecksUi=http://localhost:5008/healthchecks-ui
+      - ExternalUis__Hangfire=http://localhost:5007/hangfire
+      - ExternalUis__Kibana=http://localhost:5601/
+    depends_on:
+      - ocelot.gateway
+      - identity.server
+      - rabbitmq
+    ports:
+      - "5100:8080"
+
+  ocelot.gateway:
+    container_name: ocelot.gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - IdentityServer__Authority=http://identity.server:8080
+      - IdentityServer__Audience=tedu.microservices
+    depends_on:
+      - product.api
+      - customer.api
+      - basket.api
+      - ordering.api
+      - inventory.api
+      - hangfire.api
+      - identity.server
+    ports:
+      - "5000:8080"
+   

@@ -1,0 +1,39 @@
+@model LoginViewModel
+@{
+	ViewData["Title"] = "Sign in";
+}
+
+<h1>Sign in to your account</h1>
+
+@if (!ViewData.ModelState.IsValid)
+{
+	<div class="errors">
+		@foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+		{
+			<div>@err.ErrorMessage</div>
+		}
+	</div>
+}
+
+<form method="post" asp-controller="Login" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">
+	<input type="hidden" asp-for="ReturnUrl" />
+
+	<label asp-for="Email">Email</label>
+	<input asp-for="Email" type="email" autocomplete="username" autofocus />
+
+	<label asp-for="Password">Password</label>
+	<input asp-for="Password" type="password" autocomplete="current-password" />
+
+	<div class="checkbox">
+		<input asp-for="RememberMe" type="checkbox" id="RememberMe" />
+		<label for="RememberMe" style="margin:0;font-weight:400;">Remember me</label>
+	</div>
+
+	<button type="submit">Sign in</button>
+</form>
+
+<div class="hint">
+	<strong>Dev users</strong><br />
+	<code>admin@tedu.local</code> / <code>Admin@123!</code><br />
+	<code>customer@tedu.local</code> / <code>Customer@123!</code>
+</div>

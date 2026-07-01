@@ -1,0 +1,22 @@
+@Basket.API_HostAddress = http://localhost:5182
+
+GET {{Basket.API_HostAddress}}/api/baskets/swn
+Accept: application/json
+
+###
+
+POST {{Basket.API_HostAddress}}/api/baskets
+Content-Type: application/json
+
+{
+  "username": "swn",
+  "items": [
+    { "productNo": "P-001", "productName": "Sample", "quantity": 2, "price": 19.99 }
+  ]
+}
+
+###
+
+DELETE {{Basket.API_HostAddress}}/api/baskets/swn
+
+###
